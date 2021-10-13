@@ -16,7 +16,11 @@ Une VM **réserve les ressources** (CPU/RAM) sur le **système hôte** | Les res
 
 ## Notion de conteneur 
 
-Un ***conteneur Linux*** est un processus ou un ensemble de processus isolé du reste du système, tout en étant léger.
+Un ***conteneur Linux*** est un processus (ou un ensemble de processus) qui utilise différentes technologies d'isolation de Linux. 
+Les _namespace_ lui donnent la vision du système sur lequel il tourne.
+Les _Control Group_ (technologie du noyau Linux) limitent les ressources qu'il peut utiliser
+Le noyau Linux de la machine hôte est partagé entre tous les conteneurs.
+
 
 Le **conteneur** permet de faire de la **virtualisation légère**, c.-à-d. qu'il ne **virtualise pas les ressources** (Le conteneur partage donc les ressources avec le système hôte), il ne crée qu'une **isolation des processus**.
 
@@ -26,6 +30,10 @@ Le **conteneur** permet de faire de la **virtualisation légère**, c.-à-d. qu'
 - Ne réserve que les ressources nécessaires.
 - Démarrage rapide; Les conteneurs n'ayant pas besoin d'une **virtualisation** des ressources mais seulement d'une **isolation**, ils peuvent démarrer beaucoup plus rapidement et plus fréquemment qu'une VM sur nos serveurs hôtes.
 - Donne plus d'autonomie aux développeurs (travailler dans un  environnement local).
+
+**Les namespaces**: Pid, Net, Mount, Uts, Ipc, User.
+
+**Control Groups**: Limite les ressource qu'un processus peut utiliser: RAM: CPU, I/O, Network.
 
 **Pourquoi utiliser des conteneurs ?** 
 
