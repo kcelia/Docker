@@ -72,7 +72,7 @@ Slim: alléger
 Est un logiciel qui permet de partager des images à d'autres personnes.
 
 --------------
-# Prise ne main avec Docker 
+# Prise en main avec Docker 
 
 Trick : `CMD ["ifconfig"]` pour connaitre l'adresse IP.
 
